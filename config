@@ -1,0 +1,16 @@
+# CPU监控器配置文件
+# 基准平均耗时(微秒)
+BASELINE_US=6491
+
+# 阈值倍数
+THRESHOLD_MULTIPLIER=1.5
+
+# 计算出的阈值(微秒)
+THRESHOLD_US=9736.5
+
+# 检查间隔(秒)
+CHECK_INTERVAL=60
+
+# 连续超限次数触发报警
+CONSECUTIVE_LIMIT=3
+VIBRATE_PATTERN="500"
