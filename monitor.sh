@@ -120,7 +120,7 @@ EOF
             print_info "检查间隔: 60 秒"
             print_info "连续超限: 3 次触发报警"
             echo ""
-            print_success "校准完成!现在可以运行 ./monitor.sh start 启动监控"
+            print_success "校准完成!现在可以运行 monitor.sh start 启动监控"
             break
             
         else
@@ -141,7 +141,7 @@ EOF
 # 加载配置
 load_config() {
     if [ ! -f "$CONFIG_FILE" ]; then
-        print_error "配置文件不存在,请先运行校准: ./monitor.sh calibrate"
+        print_error "配置文件不存在,请先运行校准: monitor.sh calibrate"
         exit 1
     fi
     
@@ -259,7 +259,7 @@ start() {
         local old_pid=$(cat "$PID_FILE")
         if ps -p $old_pid > /dev/null 2>&1; then
             print_error "监控已在运行 (PID: $old_pid)"
-            print_info "如需重启,请先运行: ./monitor.sh stop"
+            print_info "如需重启,请先运行: monitor.sh stop"
             exit 1
         else
             print_warning "发现残留的PID文件,已清理"
@@ -276,8 +276,8 @@ start() {
     
     print_success "监控已启动 (PID: $pid)"
     print_info "日志文件: $SCRIPT_DIR/monitor.log"
-    print_info "停止监控: ./monitor.sh stop"
-    print_info "查看状态: ./monitor.sh status"
+    print_info "停止监控: monitor.sh stop"
+    print_info "查看状态: monitor.sh status"
 }
 
 # 停止监控
